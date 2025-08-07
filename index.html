@@ -278,6 +278,15 @@
             .skill-tags {
                 gap: 0.35rem;
             }
+            
+            .header-top > div:first-child {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .header-top img {
+                margin: 0 auto;
+            }
         }
     </style>
 </head>
@@ -285,10 +294,13 @@
     <div class="container">
         <header>
             <div class="header-top">
-                <div>
-                    <h1>Samuel Terkper Ahuno</h1>
-                    <div class="subtitle">PhD Student @ Weill Cornell Medicine</div>
-                    <div class="subtitle">Computational Biology | Cancer Epigenetics | Genomics</div>
+                <div style="display: flex; align-items: center; gap: 2rem;">
+                    <img src="assets/profile.jpg" alt="Samuel Terkper Ahuno" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover;">
+                    <div>
+                        <h1>Samuel Terkper Ahuno</h1>
+                        <div class="subtitle">PhD Student @ Weill Cornell Medicine</div>
+                        <div class="subtitle">Computational Biology | Cancer Epigenetics | Genomics</div>
+                    </div>
                 </div>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">☀️</button>
             </div>
