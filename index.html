@@ -199,6 +199,32 @@
             opacity: 0.7;
         }
 
+        .section-expand-btn {
+            background: var(--code-bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+            font-size: 0.9rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            margin: 1rem 0;
+            border-radius: 6px;
+            transition: all 0.2s;
+            width: auto;
+            display: inline-block;
+        }
+
+        .section-expand-btn:hover {
+            background: var(--border);
+        }
+
+        .hidden-items {
+            display: none;
+        }
+
+        .hidden-items.show {
+            display: block;
+        }
+
         .skill-category h3 {
             font-size: 0.95rem;
             font-weight: 600;
@@ -388,28 +414,32 @@
                 </div>
             </div>
 
-            <div class="experience-item">
-                <h3>Visiting Student</h3>
-                <div class="company">Dr. Gavin Ha Lab, Fred Hutchinson Cancer Research Center, Seattle</div>
-                <div class="date">July 2019; Jan 2020 - March 2020</div>
-                <div class="description-brief">Analyzed cell-free DNA from Ghanaian breast cancer patients for non-invasive detection.</div>
-                <button class="read-more-btn" onclick="toggleDescription(this)">Read more →</button>
-                <div class="description-full">
-                    <strong>Focus:</strong> Detection of cancer and driver mutations from plasma samples at diagnosis.<br><br>
-                    <strong>Skills Developed:</strong> cfDNA analysis, copy number analysis, R programming (data.table, GenomicRanges, ggplot2), bioinformatics pipeline development.
+            <button class="section-expand-btn" onclick="toggleSection('experience-more')">Show more positions ↓</button>
+            
+            <div id="experience-more" class="hidden-items">
+                <div class="experience-item">
+                    <h3>Visiting Student</h3>
+                    <div class="company">Dr. Gavin Ha Lab, Fred Hutchinson Cancer Research Center, Seattle</div>
+                    <div class="date">July 2019; Jan 2020 - March 2020</div>
+                    <div class="description-brief">Analyzed cell-free DNA from Ghanaian breast cancer patients for non-invasive detection.</div>
+                    <button class="read-more-btn" onclick="toggleDescription(this)">Read more →</button>
+                    <div class="description-full">
+                        <strong>Focus:</strong> Detection of cancer and driver mutations from plasma samples at diagnosis.<br><br>
+                        <strong>Skills Developed:</strong> cfDNA analysis, copy number analysis, R programming (data.table, GenomicRanges, ggplot2), bioinformatics pipeline development.
+                    </div>
                 </div>
-            </div>
 
-            <div class="experience-item">
-                <h3>Research & Teaching Assistant</h3>
-                <div class="company">Dr. Alexander Kwarteng Lab, KNUST, Ghana</div>
-                <div class="date">July 2016 - May 2019</div>
-                <div class="description-brief">Researched immunology and microbiome of human filarial infections.</div>
-                <button class="read-more-btn" onclick="toggleDescription(this)">Read more →</button>
-                <div class="description-full">
-                    <strong>Research:</strong> Flow cytometry analysis, immunological assays, microbiome characterization.<br><br>
-                    <strong>Teaching:</strong> Co-mentored undergraduate research projects, led lab demonstrations and tutorials.<br><br>
-                    <strong>Additional:</strong> Contributed to grant writing and manuscript preparation.
+                <div class="experience-item">
+                    <h3>Research & Teaching Assistant</h3>
+                    <div class="company">Dr. Alexander Kwarteng Lab, KNUST, Ghana</div>
+                    <div class="date">July 2016 - May 2019</div>
+                    <div class="description-brief">Researched immunology and microbiome of human filarial infections.</div>
+                    <button class="read-more-btn" onclick="toggleDescription(this)">Read more →</button>
+                    <div class="description-full">
+                        <strong>Research:</strong> Flow cytometry analysis, immunological assays, microbiome characterization.<br><br>
+                        <strong>Teaching:</strong> Co-mentored undergraduate research projects, led lab demonstrations and tutorials.<br><br>
+                        <strong>Additional:</strong> Contributed to grant writing and manuscript preparation.
+                    </div>
                 </div>
             </div>
         </section>
@@ -426,37 +456,41 @@
                 </div>
             </div>
 
-            <div class="education-item">
-                <h3>Visiting Graduate Student</h3>
-                <div class="institution">Columbia University, New York</div>
-                <div class="date">July 2023 - May 2024</div>
-                <div class="description">
-                    Project-based coursework in probabilistic modelling and causal inference
+            <button class="section-expand-btn" onclick="toggleSection('education-more')">Show all education ↓</button>
+            
+            <div id="education-more" class="hidden-items">
+                <div class="education-item">
+                    <h3>Visiting Graduate Student</h3>
+                    <div class="institution">Columbia University, New York</div>
+                    <div class="date">July 2023 - May 2024</div>
+                    <div class="description">
+                        Project-based coursework in probabilistic modelling and causal inference
+                    </div>
                 </div>
-            </div>
 
-            <div class="education-item">
-                <h3>Visiting Graduate Student</h3>
-                <div class="institution">Cornell University, Ithaca, New York</div>
-                <div class="date">August 2021 - May 2022</div>
-                <div class="description">
-                    Coursework in Quantitative Genetics and Genomics, Statistics I & II, Human Genetics
+                <div class="education-item">
+                    <h3>Visiting Graduate Student</h3>
+                    <div class="institution">Cornell University, Ithaca, New York</div>
+                    <div class="date">August 2021 - May 2022</div>
+                    <div class="description">
+                        Coursework in Quantitative Genetics and Genomics, Statistics I & II, Human Genetics
+                    </div>
                 </div>
-            </div>
 
-            <div class="education-item">
-                <h3>MPhil in Biochemistry</h3>
-                <div class="institution">Kwame Nkrumah University of Science and Technology, Ghana</div>
-                <div class="date">August 2018 - February 2021</div>
-                <div class="description">
-                    Thesis: Circulating tumor DNA is readily detectable among Ghanaian breast cancer patients supporting non-invasive cancer genomic studies in Africa
+                <div class="education-item">
+                    <h3>MPhil in Biochemistry</h3>
+                    <div class="institution">Kwame Nkrumah University of Science and Technology, Ghana</div>
+                    <div class="date">August 2018 - February 2021</div>
+                    <div class="description">
+                        Thesis: Circulating tumor DNA is readily detectable among Ghanaian breast cancer patients supporting non-invasive cancer genomic studies in Africa
+                    </div>
                 </div>
-            </div>
 
-            <div class="education-item">
-                <h3>BSc in Biochemistry</h3>
-                <div class="institution">Kwame Nkrumah University of Science and Technology, Ghana</div>
-                <div class="date">September 2012 - June 2016</div>
+                <div class="education-item">
+                    <h3>BSc in Biochemistry</h3>
+                    <div class="institution">Kwame Nkrumah University of Science and Technology, Ghana</div>
+                    <div class="date">September 2012 - June 2016</div>
+                </div>
             </div>
         </section>
 
@@ -519,19 +553,23 @@
                 </div>
             </div>
 
-            <div class="project-item">
-                <h3>Circulating Tumor DNA Detection</h3>
-                <p>Non-invasive cancer detection in Ghanaian breast cancer patients using cfDNA analysis, supporting cancer genomic studies in Africa</p>
-                <div class="project-links">
-                    <a href="#">Fred Hutch Collaboration</a>
+            <button class="section-expand-btn" onclick="toggleSection('projects-more')">Show more projects ↓</button>
+            
+            <div id="projects-more" class="hidden-items">
+                <div class="project-item">
+                    <h3>Circulating Tumor DNA Detection</h3>
+                    <p>Non-invasive cancer detection in Ghanaian breast cancer patients using cfDNA analysis, supporting cancer genomic studies in Africa</p>
+                    <div class="project-links">
+                        <a href="#">Fred Hutch Collaboration</a>
+                    </div>
                 </div>
-            </div>
 
-            <div class="project-item">
-                <h3>Exercise-Induced cfDNA Dynamics</h3>
-                <p>Investigating cell-of-origin and dynamics of circulating free DNA after exercise, identifying contribution from neutrophils and cardiomyocytes</p>
-                <div class="project-links">
-                    <a href="#">Published in Cell Reports Medicine</a>
+                <div class="project-item">
+                    <h3>Exercise-Induced cfDNA Dynamics</h3>
+                    <p>Investigating cell-of-origin and dynamics of circulating free DNA after exercise, identifying contribution from neutrophils and cardiomyocytes</p>
+                    <div class="project-links">
+                        <a href="#">Published in Cell Reports Medicine</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -668,6 +706,20 @@
             } else {
                 descriptionFull.classList.add('show');
                 button.textContent = 'Read less ←';
+            }
+        }
+
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            const button = section.previousElementSibling;
+            const isShowing = section.classList.contains('show');
+            
+            if (isShowing) {
+                section.classList.remove('show');
+                button.textContent = button.textContent.replace('less ↑', 'more ↓').replace('Hide', 'Show');
+            } else {
+                section.classList.add('show');
+                button.textContent = button.textContent.replace('more ↓', 'less ↑').replace('Show', 'Hide');
             }
         }
     </script>
