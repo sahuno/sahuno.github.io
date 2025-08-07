@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel Terkper Ahuno - [Your Professional Title]</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #1a1a1a;
+            --text-secondary: #666;
+            --link: #0066cc;
+            --border: #e5e5e5;
+            --code-bg: #f6f6f6;
+        }
+
+        [data-theme="dark"] {
+            --bg: #0d1117;
+            --text: #e6e6e6;
+            --text-secondary: #8b949e;
+            --link: #58a6ff;
+            --border: #30363d;
+            --code-bg: #161b22;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        header {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 0.5rem;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text);
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 0.25rem;
+            transition: opacity 0.2s;
+        }
+
+        .theme-toggle:hover {
+            opacity: 0.7;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--link);
+        }
+
+        .intro {
+            margin-bottom: 3rem;
+        }
+
+        .intro p {
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .links a {
+            color: var(--link);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .experience-item, .education-item, .skill-category {
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-item h3, .education-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .experience-item .company, .education-item .institution {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .experience-item .date, .education-item .date {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-item .description, .education-item .description {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .skill-category h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: var(--code-bg);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            border: 1px solid var(--border);
+        }
+
+        .project-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .project-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .project-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-links a {
+            color: var(--link);
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        .project-links a:hover {
+            text-decoration: underline;
+        }
+
+        .publication-item {
+            margin-bottom: 1.25rem;
+        }
+
+        .publication-item .authors {
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .publication-item .title {
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .publication-item .journal {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        .publication-item .pub-links {
+            margin-top: 0.25rem;
+        }
+
+        .publication-item .pub-links a {
+            color: var(--link);
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin-right: 1rem;
+        }
+
+        .publication-item .pub-links a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--link);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 1.5rem 1rem;
+            }
+            
+            .skill-tags {
+                gap: 0.35rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <div>
+                    <h1>Samuel Terkper Ahuno</h1>
+                    <div class="subtitle">PhD Student @ Weill Cornell Medicine</div>
+                    <div class="subtitle">Computational Biology | Cancer Epigenetics | Genomics</div>
+                </div>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">☀️</button>
+            </div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#education">Education</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#publications">Publications</a>
+            </nav>
+        </header>
+
+        <section id="about" class="intro">
+            <h2>About Me</h2>
+            <p>I am a PhD student in the Tri-Institute Program in Computational Biology at Weill Cornell Medicine, working in the Greenbaum Lab on epigenetics of retro-transposable elements in cancer. With a strong background in genomics and computational biology, I focus on understanding the molecular mechanisms underlying cancer development.</p>
+            <p>My research expertise spans circulating tumor DNA analysis, mutational signatures, copy number analysis, and whole genome sequencing. I have extensive experience in cloud computing, NGS data analysis, and developing computational pipelines for cancer genomics research.</p>
+            <p>I am passionate about advancing cancer research through computational approaches and have contributed to understanding breast cancer genomics in African populations, particularly focusing on non-invasive detection methods and genetic ancestry analysis.</p>
+            <div class="links">
+                <a href="mailto:ekwame001@gmail.com">✉ ekwame001@gmail.com</a>
+                <a href="https://github.com/sahuno">⬡ GitHub</a>
+                <a href="https://scholar.google.com/citations?user=YOUR_ID">📚 Google Scholar (h-index: 7)</a>
+                <a href="https://www.linkedin.com/in/samuel-ahuno-47857842/">🔗 LinkedIn</a>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <h3>Teaching Assistant - Quantitative Genomics and Genetics</h3>
+                <div class="company">Weill Cornell School of Medicine, New York</div>
+                <div class="date">Spring 2023 & Spring 2024</div>
+                <div class="description">
+                    Taught principles of computer programming & statistical modeling using R. Graded exams, debugged code, and provided additional support to students needing extra explanation.
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <h3>Research Scholar</h3>
+                <div class="company">Dr. Paz Polak Lab, Icahn School of Medicine at Mount Sinai, NY</div>
+                <div class="date">May 2019 - June 2021</div>
+                <div class="description">
+                    Investigated genomic drivers, mutational signatures, and genetic ancestry of African-American breast cancer using Google Cloud/Terra. Conducted whole genome analysis of anal cancer in HIV+ individuals and studied cfDNA dynamics in exercise. Skills: copy number analysis, mutational signatures, UNIX, bash scripting, snakemake, germline and somatic variant detection, cloud computing.
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <h3>Visiting Student</h3>
+                <div class="company">Dr. Gavin Ha Lab, Fred Hutchinson Cancer Research Center, Seattle</div>
+                <div class="date">July 2019; Jan 2020 - March 2020</div>
+                <div class="description">
+                    Analyzed cell-free DNA from plasma of Ghanaian women at breast cancer diagnosis to detect cancer and driver mutations. Developed expertise in cfDNA analysis, copy number analysis, and R programming (data tables, GenomicRanges, ggplot2).
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <h3>Research & Teaching Assistant</h3>
+                <div class="company">Dr. Alexander Kwarteng Lab, KNUST, Ghana</div>
+                <div class="date">July 2016 - May 2019</div>
+                <div class="description">
+                    Researched immunology and microbiome of human filarial infections. Performed flow cytometry, co-mentored undergraduate research, conducted data analysis, and contributed to grant and manuscript preparation.
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            
+            <div class="education-item">
+                <h3>PhD in Computational Biology</h3>
+                <div class="institution">Tri-Institute Program, Weill Cornell Medicine, NY</div>
+                <div class="date">July 2021 - Present</div>
+                <div class="description">
+                    Thesis: Epigenetics of retro-transposable elements in cancer (Greenbaum Lab)
+                </div>
+            </div>
+
+            <div class="education-item">
+                <h3>Visiting Graduate Student</h3>
+                <div class="institution">Columbia University, New York</div>
+                <div class="date">July 2023 - May 2024</div>
+                <div class="description">
+                    Project-based coursework in probabilistic modelling and causal inference
+                </div>
+            </div>
+
+            <div class="education-item">
+                <h3>Visiting Graduate Student</h3>
+                <div class="institution">Cornell University, Ithaca, New York</div>
+                <div class="date">August 2021 - May 2022</div>
+                <div class="description">
+                    Coursework in Quantitative Genetics and Genomics, Statistics I & II, Human Genetics
+                </div>
+            </div>
+
+            <div class="education-item">
+                <h3>MPhil in Biochemistry</h3>
+                <div class="institution">Kwame Nkrumah University of Science and Technology, Ghana</div>
+                <div class="date">August 2018 - February 2021</div>
+                <div class="description">
+                    Thesis: Circulating tumor DNA is readily detectable among Ghanaian breast cancer patients supporting non-invasive cancer genomic studies in Africa
+                </div>
+            </div>
+
+            <div class="education-item">
+                <h3>BSc in Biochemistry</h3>
+                <div class="institution">Kwame Nkrumah University of Science and Technology, Ghana</div>
+                <div class="date">September 2012 - June 2016</div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills & Expertise</h2>
+            
+            <div class="skill-category">
+                <h3>Programming & Statistical Analysis</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">R</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">UNIX/Bash</span>
+                    <span class="skill-tag">Snakemake</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Git</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Genomics & Bioinformatics</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">NGS Data Analysis</span>
+                    <span class="skill-tag">cfDNA Analysis</span>
+                    <span class="skill-tag">Copy Number Analysis</span>
+                    <span class="skill-tag">Mutational Signatures</span>
+                    <span class="skill-tag">Variant Detection</span>
+                    <span class="skill-tag">Bedtools</span>
+                    <span class="skill-tag">GenomicRanges</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Cloud Computing & Tools</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Google Cloud/Terra</span>
+                    <span class="skill-tag">High Performance Computing</span>
+                    <span class="skill-tag">Machine Learning</span>
+                    <span class="skill-tag">Flow Cytometry</span>
+                    <span class="skill-tag">Cell Culture</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Key Research Projects</h2>
+            
+            <div class="project-item">
+                <h3>Cancer Epigenetics Research</h3>
+                <p>PhD thesis focusing on epigenetics of retro-transposable elements in cancer at the Greenbaum Lab, Weill Cornell Medicine</p>
+                <div class="project-links">
+                    <a href="#">Current Project</a>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <h3>African Breast Cancer Genomics</h3>
+                <p>Whole genome sequencing of triple-negative breast cancer tumors from women of African descent, investigating genomic drivers and mutational signatures</p>
+                <div class="project-links">
+                    <a href="#">Mount Sinai Collaboration</a>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <h3>Circulating Tumor DNA Detection</h3>
+                <p>Non-invasive cancer detection in Ghanaian breast cancer patients using cfDNA analysis, supporting cancer genomic studies in Africa</p>
+                <div class="project-links">
+                    <a href="#">Fred Hutch Collaboration</a>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <h3>Exercise-Induced cfDNA Dynamics</h3>
+                <p>Investigating cell-of-origin and dynamics of circulating free DNA after exercise, identifying contribution from neutrophils and cardiomyocytes</p>
+                <div class="project-links">
+                    <a href="#">Published in Cell Reports Medicine</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2>Selected Publications</h2>
+            
+            <div class="publication-item">
+                <div class="authors">Fridlich O, Peretz A, Fox-Fisher I, ... Ahuno ST, et al.</div>
+                <div class="title">Elevated cfDNA after exercise is derived primarily from mature polymorphonuclear neutrophils, with a minor contribution of cardiomyocytes</div>
+                <div class="journal">Cell Reports Medicine, 2023</div>
+                <div class="pub-links">
+                    <a href="https://doi.org/10.1016/j.xcrm.2023.101074">[DOI]</a>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <div class="authors">Ahuno ST, Shah Y, Martini R, et al.</div>
+                <div class="title">Whole genome sequence of triple negative breast cancer (TNBC) tumors of African descent</div>
+                <div class="journal">Cancer Research, 2022</div>
+                <div class="pub-links">
+                    <a href="https://doi.org/10.1158/1538-7445.AM2022-2935">[DOI]</a>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <div class="authors">Paixão D, Torrezan GT, Santiago KM, ... Ahuno ST, et al.</div>
+                <div class="title">Characterization of genetic predisposition to molecular subtypes of breast cancer in Brazilian patients</div>
+                <div class="journal">Frontiers in Oncology, 2022</div>
+                <div class="pub-links">
+                    <a href="https://doi.org/10.3389/fonc.2022.976959">[DOI]</a>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <div class="authors">Ahuno ST, Doebley AL, Ahearn TU, et al.</div>
+                <div class="title">Circulating tumor DNA is readily detectable among Ghanaian breast cancer patients supporting non-invasive cancer genomic studies in Africa</div>
+                <div class="journal">NPJ Precision Oncology, 2021</div>
+                <div class="pub-links">
+                    <a href="https://doi.org/10.1038/s41698-021-00219-7">[DOI]</a>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <div class="authors">Kwarteng A, Ahuno ST, Kwakye-Nuako G</div>
+                <div class="title">The therapeutic landscape of HIV-1 via genome editing</div>
+                <div class="journal">AIDS Research and Therapy, 2017</div>
+                <div class="pub-links">
+                    <a href="https://doi.org/10.1186/s12981-017-0157-8">[DOI]</a>
+                </div>
+            </div>
+
+            <p style="margin-top: 1.5rem;">
+                <a href="https://scholar.google.com/citations?user=YOUR_ID" style="color: var(--link); text-decoration: none; font-size: 0.9rem;">View all 11 publications on Google Scholar (221 citations, h-index: 7) →</a>
+            </p>
+        </section>
+
+        <footer>
+            <p>© 2025 Samuel Terkper Ahuno • Built with HTML & CSS • Hosted on GitHub Pages</p>
+            <p style="margin-top: 0.5rem;">
+                <a href="https://github.com/[yourusername]/[repository-name]">View Source</a>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const themeToggle = document.querySelector('.theme-toggle');
+            
+            if (html.getAttribute('data-theme') === 'dark') {
+                html.removeAttribute('data-theme');
+                themeToggle.textContent = '☀️';
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                themeToggle.textContent = '🌙';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Check for saved theme preference or default to light
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            document.querySelector('.theme-toggle').textContent = '🌙';
+        }
+    </script>
+</body>
+</html>
