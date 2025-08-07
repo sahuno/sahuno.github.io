@@ -165,6 +165,40 @@
             line-height: 1.5;
         }
 
+        .experience-item .description-brief {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .experience-item .description-full {
+            display: none;
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .experience-item .description-full.show {
+            display: block;
+        }
+
+        .read-more-btn {
+            background: none;
+            border: none;
+            color: var(--link);
+            font-size: 0.85rem;
+            cursor: pointer;
+            padding: 0;
+            margin-top: 0.5rem;
+            text-decoration: underline;
+            transition: opacity 0.2s;
+        }
+
+        .read-more-btn:hover {
+            opacity: 0.7;
+        }
+
         .skill-category h3 {
             font-size: 0.95rem;
             font-weight: 600;
@@ -335,8 +369,10 @@
                 <h3>Teaching Assistant - Quantitative Genomics and Genetics</h3>
                 <div class="company">Weill Cornell School of Medicine, New York</div>
                 <div class="date">Spring 2023 & Spring 2024</div>
-                <div class="description">
-                    Taught principles of computer programming & statistical modeling using R. Graded exams, debugged code, and provided additional support to students needing extra explanation.
+                <div class="description-brief">Taught principles of computer programming & statistical modeling using R.</div>
+                <button class="read-more-btn" onclick="toggleDescription(this)">Read more →</button>
+                <div class="description-full">
+                    <strong>Responsibilities:</strong> Graded exams, debugged code, and provided additional support to students needing extra explanation. Led tutorial sessions on statistical genomics and R programming fundamentals.
                 </div>
             </div>
 
@@ -344,8 +380,11 @@
                 <h3>Research Scholar</h3>
                 <div class="company">Dr. Paz Polak Lab, Icahn School of Medicine at Mount Sinai, NY</div>
                 <div class="date">May 2019 - June 2021</div>
-                <div class="description">
-                    Investigated genomic drivers, mutational signatures, and genetic ancestry of African-American breast cancer using Google Cloud/Terra. Conducted whole genome analysis of anal cancer in HIV+ individuals and studied cfDNA dynamics in exercise. Skills: copy number analysis, mutational signatures, UNIX, bash scripting, snakemake, germline and somatic variant detection, cloud computing.
+                <div class="description-brief">Investigated genomic drivers and mutational signatures in African-American breast cancer.</div>
+                <button class="read-more-btn" onclick="toggleDescription(this)">Read more →</button>
+                <div class="description-full">
+                    <strong>Projects:</strong> Conducted whole genome analysis using Google Cloud/Terra platform. Analyzed anal cancer in HIV+ individuals and studied cfDNA dynamics in exercise.<br><br>
+                    <strong>Technical Skills:</strong> Copy number analysis, mutational signatures, UNIX, bash scripting, snakemake, germline and somatic variant detection, cloud computing.
                 </div>
             </div>
 
@@ -353,8 +392,11 @@
                 <h3>Visiting Student</h3>
                 <div class="company">Dr. Gavin Ha Lab, Fred Hutchinson Cancer Research Center, Seattle</div>
                 <div class="date">July 2019; Jan 2020 - March 2020</div>
-                <div class="description">
-                    Analyzed cell-free DNA from plasma of Ghanaian women at breast cancer diagnosis to detect cancer and driver mutations. Developed expertise in cfDNA analysis, copy number analysis, and R programming (data tables, GenomicRanges, ggplot2).
+                <div class="description-brief">Analyzed cell-free DNA from Ghanaian breast cancer patients for non-invasive detection.</div>
+                <button class="read-more-btn" onclick="toggleDescription(this)">Read more →</button>
+                <div class="description-full">
+                    <strong>Focus:</strong> Detection of cancer and driver mutations from plasma samples at diagnosis.<br><br>
+                    <strong>Skills Developed:</strong> cfDNA analysis, copy number analysis, R programming (data.table, GenomicRanges, ggplot2), bioinformatics pipeline development.
                 </div>
             </div>
 
@@ -362,8 +404,12 @@
                 <h3>Research & Teaching Assistant</h3>
                 <div class="company">Dr. Alexander Kwarteng Lab, KNUST, Ghana</div>
                 <div class="date">July 2016 - May 2019</div>
-                <div class="description">
-                    Researched immunology and microbiome of human filarial infections. Performed flow cytometry, co-mentored undergraduate research, conducted data analysis, and contributed to grant and manuscript preparation.
+                <div class="description-brief">Researched immunology and microbiome of human filarial infections.</div>
+                <button class="read-more-btn" onclick="toggleDescription(this)">Read more →</button>
+                <div class="description-full">
+                    <strong>Research:</strong> Flow cytometry analysis, immunological assays, microbiome characterization.<br><br>
+                    <strong>Teaching:</strong> Co-mentored undergraduate research projects, led lab demonstrations and tutorials.<br><br>
+                    <strong>Additional:</strong> Contributed to grant writing and manuscript preparation.
                 </div>
             </div>
         </section>
@@ -610,6 +656,19 @@
         if (savedTheme === 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark');
             document.querySelector('.theme-toggle').textContent = '🌙';
+        }
+
+        function toggleDescription(button) {
+            const descriptionFull = button.nextElementSibling;
+            const isShowing = descriptionFull.classList.contains('show');
+            
+            if (isShowing) {
+                descriptionFull.classList.remove('show');
+                button.textContent = 'Read more →';
+            } else {
+                descriptionFull.classList.add('show');
+                button.textContent = 'Read less ←';
+            }
         }
     </script>
 </body>
