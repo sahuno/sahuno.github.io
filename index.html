@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samuel Terkper Ahuno - [Your Professional Title]</title>
+    <title>Samuel Terkper Ahuno - Computational Biologist & Creative</title>
     <style>
         :root {
             --bg: #ffffff;
@@ -12,6 +12,7 @@
             --link: #0066cc;
             --border: #e5e5e5;
             --code-bg: #f6f6f6;
+            --accent: #ff6b6b;
         }
 
         [data-theme="dark"] {
@@ -21,6 +22,7 @@
             --link: #58a6ff;
             --border: #30363d;
             --code-bg: #161b22;
+            --accent: #ff6b6b;
         }
 
         * {
@@ -38,34 +40,47 @@
         }
 
         .container {
-            max-width: 650px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 2rem 1.5rem;
+            padding: 2rem 3rem;
         }
 
         header {
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
             padding-bottom: 2rem;
             border-bottom: 1px solid var(--border);
         }
 
-        .header-top {
+        .header-content {
             display: flex;
             justify-content: space-between;
-            align-items: start;
-            margin-bottom: 0.5rem;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .header-left img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
         }
 
         h1 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 600;
             margin-bottom: 0.25rem;
         }
 
         .subtitle {
             color: var(--text-secondary);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
+            font-size: 1rem;
         }
 
         .theme-toggle {
@@ -83,183 +98,116 @@
         }
 
         nav {
+            margin-top: 2rem;
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
             flex-wrap: wrap;
         }
 
         nav a {
             color: var(--text);
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 1rem;
             transition: color 0.2s;
+            position: relative;
         }
 
         nav a:hover {
             color: var(--link);
         }
 
-        .intro {
-            margin-bottom: 3rem;
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--link);
         }
 
-        .intro p {
+        .hero {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
             margin-bottom: 1rem;
-            color: var(--text);
+            background: linear-gradient(135deg, var(--link), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .links {
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            margin-top: 1.5rem;
-        }
-
-        .links a {
-            color: var(--link);
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-
-        .links a:hover {
-            text-decoration: underline;
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         section {
-            margin-bottom: 3rem;
+            margin-bottom: 5rem;
         }
 
         h2 {
-            font-size: 1.25rem;
+            font-size: 1.8rem;
             font-weight: 600;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .experience-item, .education-item, .skill-category {
-            margin-bottom: 1.5rem;
-        }
-
-        .experience-item h3, .education-item h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-
-        .experience-item .company, .education-item .institution {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .experience-item .date, .education-item .date {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            font-style: italic;
-            margin-bottom: 0.5rem;
-        }
-
-        .experience-item .description, .education-item .description {
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        .experience-item .description-brief {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-        }
-
-        .experience-item .description-full {
-            display: none;
-            margin-top: 0.75rem;
-            padding-top: 0.75rem;
-            border-top: 1px solid var(--border);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .experience-item .description-full.show {
-            display: block;
-        }
-
-        .read-more-btn {
-            background: none;
-            border: none;
-            color: var(--link);
-            font-size: 0.85rem;
-            cursor: pointer;
-            padding: 0;
-            margin-top: 0.5rem;
-            text-decoration: underline;
-            transition: opacity 0.2s;
-        }
-
-        .read-more-btn:hover {
-            opacity: 0.7;
-        }
-
-        .section-expand-btn {
-            background: var(--code-bg);
-            border: 1px solid var(--border);
-            color: var(--text);
-            font-size: 0.9rem;
-            cursor: pointer;
-            padding: 0.5rem 1rem;
-            margin: 1rem 0;
-            border-radius: 6px;
-            transition: all 0.2s;
-            width: auto;
-            display: inline-block;
-        }
-
-        .section-expand-btn:hover {
-            background: var(--border);
-        }
-
-        .hidden-items {
-            display: none;
-        }
-
-        .hidden-items.show {
-            display: block;
-        }
-
-        .skill-category h3 {
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text-secondary);
-        }
-
-        .skill-tags {
+            margin-bottom: 2rem;
             display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
+            align-items: center;
+            gap: 1rem;
         }
 
-        .skill-tag {
+        h2 .emoji {
+            font-size: 1.5rem;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
             background: var(--code-bg);
-            padding: 0.25rem 0.75rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
             border: 1px solid var(--border);
         }
 
-        .project-item {
-            margin-bottom: 1.5rem;
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
-        .project-item h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-
-        .project-item p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
+        .project-card h3 {
+            font-size: 1.2rem;
             margin-bottom: 0.5rem;
+        }
+
+        .project-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            background: var(--bg);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid var(--border);
         }
 
         .project-links {
@@ -270,82 +218,260 @@
         .project-links a {
             color: var(--link);
             text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Agents Section */
+        .agents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .agent-card {
+            background: linear-gradient(135deg, var(--code-bg), var(--bg));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .agent-card:hover {
+            transform: scale(1.05);
+        }
+
+        .agent-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .agent-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .agent-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .agent-status {
+            display: inline-block;
+            padding: 0.25rem 1rem;
+            background: var(--bg);
+            border-radius: 20px;
             font-size: 0.85rem;
+            border: 1px solid var(--border);
         }
 
-        .project-links a:hover {
-            text-decoration: underline;
+        /* Blog Section */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
         }
 
-        .publication-item {
-            margin-bottom: 1.25rem;
+        .blog-card {
+            background: var(--code-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s;
         }
 
-        .publication-item .authors {
-            font-size: 0.95rem;
-            margin-bottom: 0.25rem;
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
-        .publication-item .title {
-            font-weight: 500;
-            margin-bottom: 0.25rem;
-        }
-
-        .publication-item .journal {
+        .blog-date {
             color: var(--text-secondary);
             font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        /* Publications Carousel */
+        .publications-carousel {
+            position: relative;
+            margin: 2rem 0;
+        }
+
+        .publications-container {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 1rem 0;
+            scrollbar-width: thin;
+            scrollbar-color: var(--link) var(--code-bg);
+        }
+
+        .publications-container::-webkit-scrollbar {
+            height: 10px;
+        }
+
+        .publications-container::-webkit-scrollbar-track {
+            background: var(--code-bg);
+            border-radius: 5px;
+        }
+
+        .publications-container::-webkit-scrollbar-thumb {
+            background: var(--link);
+            border-radius: 5px;
+        }
+
+        .publication-card {
+            min-width: 400px;
+            background: var(--code-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .publication-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .publication-year {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-title {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-authors {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-journal {
+            color: var(--text-secondary);
             font-style: italic;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
         }
 
-        .publication-item .pub-links {
-            margin-top: 0.25rem;
+        /* Photography Grid */
+        .photography-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
         }
 
-        .publication-item .pub-links a {
+        .photo-item {
+            aspect-ratio: 1;
+            background: var(--code-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .photo-item:hover {
+            transform: scale(1.05);
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+        }
+
+        /* Quick About */
+        .quick-about {
+            background: var(--code-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .about-links a {
             color: var(--link);
             text-decoration: none;
-            font-size: 0.85rem;
-            margin-right: 1rem;
         }
 
-        .publication-item .pub-links a:hover {
-            text-decoration: underline;
+        /* CV Link */
+        .cv-minimal {
+            text-align: center;
+            padding: 3rem;
+            background: var(--code-bg);
+            border-radius: 12px;
+        }
+
+        .cv-minimal p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .cv-button {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background: var(--link);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: opacity 0.2s;
+        }
+
+        .cv-button:hover {
+            opacity: 0.8;
         }
 
         footer {
-            margin-top: 4rem;
+            margin-top: 6rem;
             padding-top: 2rem;
             border-top: 1px solid var(--border);
             text-align: center;
             color: var(--text-secondary);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
         }
 
-        footer a {
-            color: var(--text-secondary);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: var(--link);
-        }
-
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             .container {
-                padding: 1.5rem 1rem;
+                padding: 1.5rem;
             }
             
-            .skill-tags {
-                gap: 0.35rem;
-            }
-            
-            .header-top > div:first-child {
+            .header-content {
                 flex-direction: column;
                 text-align: center;
             }
             
-            .header-top img {
-                margin: 0 auto;
+            .projects-grid,
+            .blog-grid,
+            .agents-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .publication-card {
+                min-width: 280px;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -353,323 +479,219 @@
 <body>
     <div class="container">
         <header>
-            <div class="header-top">
-                <div style="display: flex; align-items: center; gap: 2rem;">
-                    <img src="assets/profile.jpg" alt="Samuel Terkper Ahuno" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover;">
+            <div class="header-content">
+                <div class="header-left">
+                    <img src="assets/profile.jpg" alt="Samuel Terkper Ahuno">
                     <div>
                         <h1>Samuel Terkper Ahuno</h1>
-                        <div class="subtitle">PhD Student @ Weill Cornell Medicine</div>
-                        <div class="subtitle">Computational Biology | Cancer Epigenetics | Genomics</div>
+                        <div class="subtitle">PhD Student • Builder • Creative</div>
                     </div>
                 </div>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">☀️</button>
             </div>
             <nav>
-                <a href="#about">About</a>
-                <a href="#experience">Experience</a>
-                <a href="#education">Education</a>
-                <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
-                <a href="#publications">Publications</a>
+                <a href="#agents">AI Agents</a>
                 <a href="#blog">Blog</a>
+                <a href="#publications">Research</a>
+                <a href="#photography">Photography</a>
+                <a href="#about">About</a>
             </nav>
         </header>
 
-        <section id="about" class="intro">
-            <h2>About Me</h2>
-            <p>I am a PhD student in the Tri-Institute Program in Computational Biology at Weill Cornell Medicine, working in the Greenbaum Lab on epigenetics of retro-transposable elements in cancer. With a strong background in genomics and computational biology, I focus on understanding the molecular mechanisms underlying cancer development.</p>
-            <p>My research expertise spans circulating tumor DNA analysis, mutational signatures, copy number analysis, and whole genome sequencing. I have extensive experience in cloud computing, NGS data analysis, and developing computational pipelines for cancer genomics research.</p>
-            <p>I am passionate about advancing cancer research through computational approaches and have contributed to understanding breast cancer genomics in African populations, particularly focusing on non-invasive detection methods and genetic ancestry analysis.</p>
-            <div class="links">
-                <a href="mailto:ekwame001@gmail.com">✉ ekwame001@gmail.com</a>
-                <a href="https://github.com/sahuno">⬡ GitHub</a>
-                <a href="https://scholar.google.com/citations?user=YOUR_ID">📚 Google Scholar (h-index: 7)</a>
-                <a href="https://www.linkedin.com/in/samuel-ahuno-47857842/">🔗 LinkedIn</a>
-            </div>
-        </section>
-
-        <section id="experience">
-            <h2>Professional Experience</h2>
-            
-            <div class="experience-item">
-                <h3>Teaching Assistant - Quantitative Genomics and Genetics</h3>
-                <div class="company">Weill Cornell School of Medicine, New York</div>
-                <div class="date">Spring 2023 & Spring 2024</div>
-                <div class="description-brief">Taught principles of computer programming & statistical modeling using R.</div>
-                <button class="read-more-btn" onclick="toggleDescription(this)">Read more →</button>
-                <div class="description-full">
-                    <strong>Responsibilities:</strong> Graded exams, debugged code, and provided additional support to students needing extra explanation. Led tutorial sessions on statistical genomics and R programming fundamentals.
-                </div>
-            </div>
-
-            <div class="experience-item">
-                <h3>Research Scholar</h3>
-                <div class="company">Dr. Paz Polak Lab, Icahn School of Medicine at Mount Sinai, NY</div>
-                <div class="date">May 2019 - June 2021</div>
-                <div class="description-brief">Investigated genomic drivers and mutational signatures in African-American breast cancer.</div>
-                <button class="read-more-btn" onclick="toggleDescription(this)">Read more →</button>
-                <div class="description-full">
-                    <strong>Projects:</strong> Conducted whole genome analysis using Google Cloud/Terra platform. Analyzed anal cancer in HIV+ individuals and studied cfDNA dynamics in exercise.<br><br>
-                    <strong>Technical Skills:</strong> Copy number analysis, mutational signatures, UNIX, bash scripting, snakemake, germline and somatic variant detection, cloud computing.
-                </div>
-            </div>
-
-            <button class="section-expand-btn" onclick="toggleSection('experience-more')">Show more positions ↓</button>
-            
-            <div id="experience-more" class="hidden-items">
-                <div class="experience-item">
-                    <h3>Visiting Student</h3>
-                    <div class="company">Dr. Gavin Ha Lab, Fred Hutchinson Cancer Research Center, Seattle</div>
-                    <div class="date">July 2019; Jan 2020 - March 2020</div>
-                    <div class="description-brief">Analyzed cell-free DNA from Ghanaian breast cancer patients for non-invasive detection.</div>
-                    <button class="read-more-btn" onclick="toggleDescription(this)">Read more →</button>
-                    <div class="description-full">
-                        <strong>Focus:</strong> Detection of cancer and driver mutations from plasma samples at diagnosis.<br><br>
-                        <strong>Skills Developed:</strong> cfDNA analysis, copy number analysis, R programming (data.table, GenomicRanges, ggplot2), bioinformatics pipeline development.
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <h3>Research & Teaching Assistant</h3>
-                    <div class="company">Dr. Alexander Kwarteng Lab, KNUST, Ghana</div>
-                    <div class="date">July 2016 - May 2019</div>
-                    <div class="description-brief">Researched immunology and microbiome of human filarial infections.</div>
-                    <button class="read-more-btn" onclick="toggleDescription(this)">Read more →</button>
-                    <div class="description-full">
-                        <strong>Research:</strong> Flow cytometry analysis, immunological assays, microbiome characterization.<br><br>
-                        <strong>Teaching:</strong> Co-mentored undergraduate research projects, led lab demonstrations and tutorials.<br><br>
-                        <strong>Additional:</strong> Contributed to grant writing and manuscript preparation.
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="education">
-            <h2>Education</h2>
-            
-            <div class="education-item">
-                <h3>PhD in Computational Biology</h3>
-                <div class="institution">Tri-Institute Program, Weill Cornell Medicine, NY</div>
-                <div class="date">July 2021 - Present</div>
-                <div class="description">
-                    Thesis: Epigenetics of retro-transposable elements in cancer (Greenbaum Lab)
-                </div>
-            </div>
-
-            <button class="section-expand-btn" onclick="toggleSection('education-more')">Show all education ↓</button>
-            
-            <div id="education-more" class="hidden-items">
-                <div class="education-item">
-                    <h3>Visiting Graduate Student</h3>
-                    <div class="institution">Columbia University, New York</div>
-                    <div class="date">July 2023 - May 2024</div>
-                    <div class="description">
-                        Project-based coursework in probabilistic modelling and causal inference
-                    </div>
-                </div>
-
-                <div class="education-item">
-                    <h3>Visiting Graduate Student</h3>
-                    <div class="institution">Cornell University, Ithaca, New York</div>
-                    <div class="date">August 2021 - May 2022</div>
-                    <div class="description">
-                        Coursework in Quantitative Genetics and Genomics, Statistics I & II, Human Genetics
-                    </div>
-                </div>
-
-                <div class="education-item">
-                    <h3>MPhil in Biochemistry</h3>
-                    <div class="institution">Kwame Nkrumah University of Science and Technology, Ghana</div>
-                    <div class="date">August 2018 - February 2021</div>
-                    <div class="description">
-                        Thesis: Circulating tumor DNA is readily detectable among Ghanaian breast cancer patients supporting non-invasive cancer genomic studies in Africa
-                    </div>
-                </div>
-
-                <div class="education-item">
-                    <h3>BSc in Biochemistry</h3>
-                    <div class="institution">Kwame Nkrumah University of Science and Technology, Ghana</div>
-                    <div class="date">September 2012 - June 2016</div>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills">
-            <h2>Skills & Expertise</h2>
-            
-            <div class="skill-category">
-                <h3>Programming & Statistical Analysis</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">R</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">UNIX/Bash</span>
-                    <span class="skill-tag">Snakemake</span>
-                    <span class="skill-tag">SQL</span>
-                    <span class="skill-tag">Git</span>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>Genomics & Bioinformatics</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">NGS Data Analysis</span>
-                    <span class="skill-tag">cfDNA Analysis</span>
-                    <span class="skill-tag">Copy Number Analysis</span>
-                    <span class="skill-tag">Mutational Signatures</span>
-                    <span class="skill-tag">Variant Detection</span>
-                    <span class="skill-tag">Bedtools</span>
-                    <span class="skill-tag">GenomicRanges</span>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>Cloud Computing & Tools</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">Google Cloud/Terra</span>
-                    <span class="skill-tag">High Performance Computing</span>
-                    <span class="skill-tag">Machine Learning</span>
-                    <span class="skill-tag">Flow Cytometry</span>
-                    <span class="skill-tag">Cell Culture</span>
-                </div>
-            </div>
+        <section class="hero">
+            <h2>Building at the intersection of biology & AI</h2>
+            <p>PhD student at Weill Cornell Medicine exploring cancer epigenetics, building AI agents, and capturing moments through photography.</p>
         </section>
 
         <section id="projects">
-            <h2>Key Research Projects</h2>
-            
-            <div class="project-item">
-                <h3>Cancer Epigenetics Research</h3>
-                <p>PhD thesis focusing on epigenetics of retro-transposable elements in cancer at the Greenbaum Lab, Weill Cornell Medicine</p>
-                <div class="project-links">
-                    <a href="#">Current Project</a>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <h3>African Breast Cancer Genomics</h3>
-                <p>Whole genome sequencing of triple-negative breast cancer tumors from women of African descent, investigating genomic drivers and mutational signatures</p>
-                <div class="project-links">
-                    <a href="#">Mount Sinai Collaboration</a>
-                </div>
-            </div>
-
-            <button class="section-expand-btn" onclick="toggleSection('projects-more')">Show more projects ↓</button>
-            
-            <div id="projects-more" class="hidden-items">
-                <div class="project-item">
-                    <h3>Circulating Tumor DNA Detection</h3>
-                    <p>Non-invasive cancer detection in Ghanaian breast cancer patients using cfDNA analysis, supporting cancer genomic studies in Africa</p>
+            <h2><span class="emoji">🚀</span> Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Cancer Epigenetics Pipeline</h3>
+                    <p>Analyzing retro-transposable elements in cancer genomes using machine learning approaches.</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Genomics</span>
+                        <span class="tag">ML</span>
+                    </div>
                     <div class="project-links">
-                        <a href="#">Fred Hutch Collaboration</a>
+                        <a href="#">GitHub →</a>
+                        <a href="#">Paper →</a>
                     </div>
                 </div>
 
-                <div class="project-item">
-                    <h3>Exercise-Induced cfDNA Dynamics</h3>
-                    <p>Investigating cell-of-origin and dynamics of circulating free DNA after exercise, identifying contribution from neutrophils and cardiomyocytes</p>
-                    <div class="project-links">
-                        <a href="#">Published in Cell Reports Medicine</a>
+                <div class="project-card">
+                    <h3>cfDNA Analysis Toolkit</h3>
+                    <p>Open-source tools for analyzing circulating tumor DNA in liquid biopsies.</p>
+                    <div class="project-tags">
+                        <span class="tag">R</span>
+                        <span class="tag">Bioinformatics</span>
+                        <span class="tag">Docker</span>
                     </div>
+                    <div class="project-links">
+                        <a href="#">GitHub →</a>
+                        <a href="#">Docs →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>African Genomics Portal</h3>
+                    <p>Web platform for exploring genomic data from African populations.</p>
+                    <div class="project-tags">
+                        <span class="tag">Next.js</span>
+                        <span class="tag">D3.js</span>
+                        <span class="tag">PostgreSQL</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#">Live Demo →</a>
+                        <a href="#">GitHub →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="agents">
+            <h2><span class="emoji">🤖</span> AI Agents</h2>
+            <div class="agents-grid">
+                <div class="agent-card">
+                    <div class="agent-icon">🧬</div>
+                    <h3>BioGPT Assistant</h3>
+                    <p>Conversational AI for analyzing biological sequences and literature.</p>
+                    <div class="agent-status">In Development</div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-icon">📊</div>
+                    <h3>Data Analysis Agent</h3>
+                    <p>Automated pipeline for exploratory data analysis and visualization.</p>
+                    <div class="agent-status">Beta Testing</div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-icon">📝</div>
+                    <h3>Research Writer</h3>
+                    <p>AI agent that helps draft and edit scientific manuscripts.</p>
+                    <div class="agent-status">Coming Soon</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog">
+            <h2><span class="emoji">✍️</span> Recent Thoughts</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-date">December 2024</div>
+                    <h3>Understanding Generative vs Inference Modes</h3>
+                    <p>A fundamental distinction in probabilistic modeling that often confuses newcomers to machine learning...</p>
+                    <a href="#" style="color: var(--link); text-decoration: none;">Read more →</a>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-date">November 2024</div>
+                    <h3>Why I'm Building in Public</h3>
+                    <p>Thoughts on open science, collaboration, and the future of research...</p>
+                    <a href="#" style="color: var(--link); text-decoration: none;">Read more →</a>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-date">October 2024</div>
+                    <h3>The AI Revolution in Genomics</h3>
+                    <p>How large language models are transforming biological research...</p>
+                    <a href="#" style="color: var(--link); text-decoration: none;">Read more →</a>
                 </div>
             </div>
         </section>
 
         <section id="publications">
-            <h2>Selected Publications</h2>
-            
-            <div class="publication-item">
-                <div class="authors">Fridlich O, Peretz A, Fox-Fisher I, ... Ahuno ST, et al.</div>
-                <div class="title">Elevated cfDNA after exercise is derived primarily from mature polymorphonuclear neutrophils, with a minor contribution of cardiomyocytes</div>
-                <div class="journal">Cell Reports Medicine, 2023</div>
-                <div class="pub-links">
-                    <a href="https://doi.org/10.1016/j.xcrm.2023.101074">[DOI]</a>
+            <h2><span class="emoji">📚</span> Publications</h2>
+            <div class="publications-carousel">
+                <div class="publications-container">
+                    <div class="publication-card">
+                        <div class="publication-year">2023</div>
+                        <div class="publication-title">Elevated cfDNA after exercise is derived primarily from mature polymorphonuclear neutrophils</div>
+                        <div class="publication-authors">Fridlich O, ... Ahuno ST, et al.</div>
+                        <div class="publication-journal">Cell Reports Medicine</div>
+                        <a href="https://doi.org/10.1016/j.xcrm.2023.101074" style="color: var(--link);">View Paper →</a>
+                    </div>
+
+                    <div class="publication-card">
+                        <div class="publication-year">2022</div>
+                        <div class="publication-title">Whole genome sequence of triple negative breast cancer tumors of African descent</div>
+                        <div class="publication-authors">Ahuno ST, Shah Y, Martini R, et al.</div>
+                        <div class="publication-journal">Cancer Research</div>
+                        <a href="https://doi.org/10.1158/1538-7445.AM2022-2935" style="color: var(--link);">View Paper →</a>
+                    </div>
+
+                    <div class="publication-card">
+                        <div class="publication-year">2021</div>
+                        <div class="publication-title">Circulating tumor DNA is readily detectable among Ghanaian breast cancer patients</div>
+                        <div class="publication-authors">Ahuno ST, Doebley AL, et al.</div>
+                        <div class="publication-journal">NPJ Precision Oncology</div>
+                        <a href="https://doi.org/10.1038/s41698-021-00219-7" style="color: var(--link);">View Paper →</a>
+                    </div>
+
+                    <div class="publication-card">
+                        <div class="publication-year">2022</div>
+                        <div class="publication-title">Characterization of genetic predisposition to molecular subtypes of breast cancer</div>
+                        <div class="publication-authors">Paixão D, ... Ahuno ST, et al.</div>
+                        <div class="publication-journal">Frontiers in Oncology</div>
+                        <a href="https://doi.org/10.3389/fonc.2022.976959" style="color: var(--link);">View Paper →</a>
+                    </div>
                 </div>
             </div>
-
-            <div class="publication-item">
-                <div class="authors">Ahuno ST, Shah Y, Martini R, et al.</div>
-                <div class="title">Whole genome sequence of triple negative breast cancer (TNBC) tumors of African descent</div>
-                <div class="journal">Cancer Research, 2022</div>
-                <div class="pub-links">
-                    <a href="https://doi.org/10.1158/1538-7445.AM2022-2935">[DOI]</a>
-                </div>
-            </div>
-
-            <div class="publication-item">
-                <div class="authors">Paixão D, Torrezan GT, Santiago KM, ... Ahuno ST, et al.</div>
-                <div class="title">Characterization of genetic predisposition to molecular subtypes of breast cancer in Brazilian patients</div>
-                <div class="journal">Frontiers in Oncology, 2022</div>
-                <div class="pub-links">
-                    <a href="https://doi.org/10.3389/fonc.2022.976959">[DOI]</a>
-                </div>
-            </div>
-
-            <div class="publication-item">
-                <div class="authors">Ahuno ST, Doebley AL, Ahearn TU, et al.</div>
-                <div class="title">Circulating tumor DNA is readily detectable among Ghanaian breast cancer patients supporting non-invasive cancer genomic studies in Africa</div>
-                <div class="journal">NPJ Precision Oncology, 2021</div>
-                <div class="pub-links">
-                    <a href="https://doi.org/10.1038/s41698-021-00219-7">[DOI]</a>
-                </div>
-            </div>
-
-            <div class="publication-item">
-                <div class="authors">Kwarteng A, Ahuno ST, Kwakye-Nuako G</div>
-                <div class="title">The therapeutic landscape of HIV-1 via genome editing</div>
-                <div class="journal">AIDS Research and Therapy, 2017</div>
-                <div class="pub-links">
-                    <a href="https://doi.org/10.1186/s12981-017-0157-8">[DOI]</a>
-                </div>
-            </div>
-
-            <p style="margin-top: 1.5rem;">
-                <a href="https://scholar.google.com/citations?user=YOUR_ID" style="color: var(--link); text-decoration: none; font-size: 0.9rem;">View all 11 publications on Google Scholar (221 citations, h-index: 7) →</a>
+            <p style="text-align: center; margin-top: 1rem;">
+                <a href="https://scholar.google.com" style="color: var(--link); text-decoration: none;">View all 11 publications (h-index: 7) →</a>
             </p>
         </section>
 
-        <section id="blog">
-            <h2>Blog</h2>
-            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem;">
-                Thoughts on computational biology, machine learning, and research.
-            </p>
-            
-            <div class="blog-post">
-                <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Understanding Generative vs Inference Modes in Machine Learning</h3>
-                <div style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1rem;">December 2024</div>
-                <div style="background: var(--code-bg); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--link);">
-                    <p style="margin-bottom: 1rem; font-weight: 500;">When they say...</p>
-                    <ol style="margin-left: 1.5rem; line-height: 1.8;">
-                        <li style="margin-bottom: 0.75rem;">
-                            <strong>Generative mode:</strong> Given the parameters (i.e., θ), give me random samples from that distribution.
-                            <div style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.25rem;">
-                                This is about sampling from a known model - creating new data points that follow the learned patterns.
-                            </div>
-                        </li>
-                        <li>
-                            <strong>Inference mode:</strong> Given data, find parameters that produce this data/distribution.
-                            <div style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.25rem;">
-                                This is about learning from observations - discovering the underlying model that explains our data.
-                            </div>
-                        </li>
-                    </ol>
-                    <p style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border); font-style: italic; color: var(--text-secondary); font-size: 0.9rem;">
-                        A fundamental distinction in probabilistic modeling that often confuses newcomers to the field.
-                    </p>
+        <section id="photography">
+            <h2><span class="emoji">📸</span> Photography</h2>
+            <div class="photography-grid">
+                <div class="photo-item">
+                    <div class="photo-placeholder">Coming Soon</div>
+                </div>
+                <div class="photo-item">
+                    <div class="photo-placeholder">Coming Soon</div>
+                </div>
+                <div class="photo-item">
+                    <div class="photo-placeholder">Coming Soon</div>
+                </div>
+                <div class="photo-item">
+                    <div class="photo-placeholder">Coming Soon</div>
+                </div>
+                <div class="photo-item">
+                    <div class="photo-placeholder">Coming Soon</div>
+                </div>
+                <div class="photo-item">
+                    <div class="photo-placeholder">Coming Soon</div>
                 </div>
             </div>
+        </section>
 
-            <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
-                <p style="color: var(--text-secondary); font-size: 0.85rem; text-align: center;">
-                    More posts coming soon...
-                </p>
+        <section id="about">
+            <h2><span class="emoji">👋</span> About</h2>
+            <div class="quick-about">
+                <div class="about-text">
+                    <p>I'm a PhD student in Computational Biology at Weill Cornell Medicine, working on cancer epigenetics in the Greenbaum Lab. My research focuses on understanding how retro-transposable elements contribute to cancer development.</p>
+                    <p>Beyond research, I'm passionate about building tools that make science more accessible, exploring the intersection of AI and biology, and capturing life through photography.</p>
+                    <div class="about-links">
+                        <a href="mailto:ekwame001@gmail.com">Email</a>
+                        <a href="https://github.com/sahuno">GitHub</a>
+                        <a href="https://www.linkedin.com/in/samuel-ahuno-47857842/">LinkedIn</a>
+                        <a href="https://twitter.com/yourusername">Twitter</a>
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <section id="cv" class="cv-minimal">
+            <p>Looking for the traditional CV stuff?</p>
+            <a href="#" class="cv-button" onclick="toggleCV()">View Full CV</a>
         </section>
 
         <footer>
-            <p>© 2025 Samuel Terkper Ahuno • Built with HTML & CSS • Hosted on GitHub Pages</p>
-            <p style="margin-top: 0.5rem;">
-                <a href="https://github.com/[yourusername]/[repository-name]">View Source</a>
-            </p>
+            <p>© 2025 Samuel Terkper Ahuno • Built with curiosity & code</p>
         </footer>
     </div>
 
@@ -689,39 +711,47 @@
             }
         }
 
-        // Check for saved theme preference or default to light
+        // Check for saved theme preference
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark');
             document.querySelector('.theme-toggle').textContent = '🌙';
         }
 
-        function toggleDescription(button) {
-            const descriptionFull = button.nextElementSibling;
-            const isShowing = descriptionFull.classList.contains('show');
-            
-            if (isShowing) {
-                descriptionFull.classList.remove('show');
-                button.textContent = 'Read more →';
-            } else {
-                descriptionFull.classList.add('show');
-                button.textContent = 'Read less ←';
-            }
+        function toggleCV() {
+            alert('Full CV view coming soon! For now, check out my projects and recent work above.');
         }
 
-        function toggleSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            const button = section.previousElementSibling;
-            const isShowing = section.classList.contains('show');
-            
-            if (isShowing) {
-                section.classList.remove('show');
-                button.textContent = button.textContent.replace('less ↑', 'more ↓').replace('Hide', 'Show');
-            } else {
-                section.classList.add('show');
-                button.textContent = button.textContent.replace('more ↓', 'less ↑').replace('Show', 'Hide');
-            }
-        }
+        // Smooth scrolling for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+
+        // Active nav highlighting
+        window.addEventListener('scroll', () => {
+            let current = '';
+            document.querySelectorAll('section[id]').forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
     </script>
 </body>
 </html>
