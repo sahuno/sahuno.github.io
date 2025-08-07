@@ -101,7 +101,7 @@ Feel free to use this template for your own personal website.
 
 ## Contact
 
-- Email: sahuno@auruminstitute.org
+- Email: ekwame001@gmail.com
 - LinkedIn: [Samuel Ahuno](https://www.linkedin.com/in/samuel-ahuno-47857842/)
 - GitHub: [ahunos](https://github.com/ahunos)
 
